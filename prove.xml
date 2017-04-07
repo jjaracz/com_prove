@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="4.0">
+    <name>com_prove</name>
+    <author>Jan Jaracz</author>
+    <authorEmail>j.jaracz@poczta.pl</authorEmail>
+    <version>0.0.1</version>
+    <date>April 6, 2017</date>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>controller.php</filename>
+        <filename>prove.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+    </files>
+
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB/en-GB.com_prove.ini</language>
+    </languages>
+
+    <administration>
+        <menu>COM_PROVE_MENU</menu>
+        <files folder="admin">
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>prove.php</filename>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/en-GB.com_prove.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.com_prove.sys.ini</language>
+        </languages>
+    </administration>
+
+</extension>
