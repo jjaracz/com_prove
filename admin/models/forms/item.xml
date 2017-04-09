@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+
+    <fieldset>
+
+        <field
+                name="name"
+                type="text"
+                label="COM_PROVE_FIELD_NAME_LABEL"
+                description="COM_PROVE_FIELD_NAME_DESC"
+                class="input-xxlarge input-large-text"
+                size="40"
+                required="true"
+        />
+
+
+        <field
+                name="user_switch"
+                type="radio"
+                class="switcher"
+                label="COM_PROVE_FIELD_USER_SWITCH"
+                description="COM_PROVE_FIELD_USER_SWITCH_DESC"
+                default="0"
+        >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field
+                name="user_id"
+                type="user"
+                label="COM_PROVE_FIELD_USER_LABEL"
+                description="COM_PROVE_FIELD_USER_DESC"
+                showon="user_switch:1"
+        />
+
+        <field
+                name="email"
+                type="email"
+                label="JGLOBAL_EMAIL"
+                description="COM_PROVE_FIELD_EMAIL_DESC"
+                size="30"
+                showon="user_switch:0"
+        />
+
+        <field
+                name="published"
+                type="list"
+                label="JSTATUS"
+                description="JFIELD_PUBLISHED_DESC"
+                default="1"
+                id="published"
+                class="custom-select-color-state"
+                size="1"
+        >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="2">JARCHIVED</option>
+            <option value="-2">JTRASHED</option>
+
+        </field>
+
+    </fieldset>
+
+
+</form>

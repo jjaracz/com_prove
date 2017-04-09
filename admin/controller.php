@@ -23,5 +23,4 @@ class ProveController extends JControllerLegacy
 	 * @since  1.6
 	 */
 	protected $default_view = 'items';
-
 }

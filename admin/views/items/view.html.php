@@ -16,6 +16,10 @@ defined('_JEXEC') or die('Restricted access');
  */
 class ProveViewItems extends JViewLegacy
 {
+
+	protected $pagination;
+	protected $items;
+	protected $state;
 	/**
 	 * Display the view.
 	 *
@@ -26,7 +30,9 @@ class ProveViewItems extends JViewLegacy
 	 */
 	public function display($tpl = null)
 	{
-		echo "<h1>WORK</h1>";
+		$this->items = $this->get('Items');
+		$this->pagination = $this->get('Pagination');
+		$this->state = $this->get('State');
 		$this->addToolbar();
 		return parent::display($tpl);
 	}
@@ -40,11 +46,12 @@ class ProveViewItems extends JViewLegacy
 	 */
 	protected function addToolbar()
 	{
-
-		JToolbarHelper::title(JText::_('COM_PROVE_LIST_EMAILS'), 'emails');
-
-		JToolbarHelper::addNew('prove.add');
-
-		JHtmlSidebar::setAction('index.php?option=com_prove');
+		JToolbarHelper::title(JText::_('COM_PROVE_LIST_EMAILS'), 'address contact');
+		JToolbarHelper::addNew('item.add');
+		JToolbarHelper::publish('items.publish', 'JTOOLBAR_PUBLISH', true);
+		JToolbarHelper::unpublish('items.unpublish', 'JTOOLBAR_UNPUBLISH', true);
+		JToolbarHelper::trash('items.trash');
+		JToolBarHelper::deleteList('Are you sure ?', 'items.delete');
+		JToolbarHelper::archiveList('items.archive');
 	}
 }

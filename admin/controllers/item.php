@@ -14,5 +14,9 @@ defined('_JEXEC') or die('Restricted access');
 
 class ProveControllerItem extends JControllerForm
 {
+	public function __construct(array $config = array())
+	{
+		parent::__construct($config);
+	}
 
 }
