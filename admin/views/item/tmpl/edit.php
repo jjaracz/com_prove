@@ -58,7 +58,7 @@ $tmpl    = $isModal || $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=c
 
 	    <?php echo JHtml::_('bootstrap.endTabSet'); ?>
     </div>
-    <input type="hidden" name="task" value="">
+    <input type="hidden" name="task" value="item.edit" />
 	<?php echo JHtml::_('form.token'); ?>
 </form>
 <script>
